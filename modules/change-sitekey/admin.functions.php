@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @Project SITEKEY_CHANGER 4.x
+ * @Author KENNY NGUYEN (nguyentiendat713@gmail.com) 
+ * @Copyright (C) 2015 tradacongnghe.com. All rights reserved
+ * @Based on NukeViet CMS 
+ * @License GNU/GPL version 2 or any later version
+ * @Createdate  Fri, 18 Sep 2015 11:52:59 GMT
+ */
+
+if( ! defined( 'NV_ADMIN' ) or ! defined( 'NV_MAINFILE' ) or ! defined( 'NV_IS_MODADMIN' ) ) die( 'Stop!!!' );
+ 
+$allow_func = array('main');
+
+define( 'NV_IS_FILE_ADMIN', true );
+
+require_once NV_ROOTDIR . '/modules/' . $module_file . '/global.functions.php'; 
