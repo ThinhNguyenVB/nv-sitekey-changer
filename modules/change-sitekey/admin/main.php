@@ -11,7 +11,7 @@
 
 if( ! defined( 'NV_IS_FILE_ADMIN' ) ) die( 'Stop!!!' );
 
-$page_title = $lang_module['album'];
+$page_title = $lang_module['main'];
 $old_sitekey = $global_config['sitekey'];
 $new_sitekey = md5($_SERVER['SERVER_NAME'] . NV_ROOTDIR . $client_info['session_id']);
 $action = $nv_Request->get_int( 'action', 'post', 0 );
