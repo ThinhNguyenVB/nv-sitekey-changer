@@ -23,33 +23,38 @@ $xtpl->assign( 'NV_BASE_ADMINURL', NV_BASE_ADMINURL );
 $xtpl->assign( 'NV_NAME_VARIABLE', NV_NAME_VARIABLE );
 $xtpl->assign( 'MODULE_NAME', $module_name );
 $xtpl->assign( 'OP', $op );
-$xtpl->assign( 'OLD_SITEKEY', $old_sitekey );
-$xtpl->assign( 'NEW_SITEKEY', $new_sitekey );
 
-if($old_sitekey != $new_sitekey)
-{
-	$xtpl->parse( 'main.compare' );
-	if( $action == 1 )
+if( defined( 'NV_IS_GODADMIN' ) ){
+	$xtpl->assign( 'OLD_SITEKEY', $old_sitekey );
+	$xtpl->assign( 'NEW_SITEKEY', $new_sitekey );
+	if($old_sitekey != $new_sitekey)
 	{
-		$fname = NV_ROOTDIR . "/config.php";
-		$content = file_get_contents( $fname );
-		$content = str_replace( $old_sitekey, $new_sitekey, $content );
-		$fhandle = fopen( $fname,"w" );
-		$fwrite = fwrite( $fhandle, $content );
-		if($fwrite === false)
+		$xtpl->parse( 'main.compare' );
+		if( $action == 1 )
 		{
-			$xtpl->parse( 'main.error' );
-		}
-		else
-		{
-			$xtpl->parse( 'main.success' );
-			fclose( $fhandle );
+			$fname = NV_ROOTDIR . "/config.php";
+			$content = file_get_contents( $fname );
+			$content = str_replace( $old_sitekey, $new_sitekey, $content );
+			$fhandle = fopen( $fname,"w" );
+			$fwrite = fwrite( $fhandle, $content );
+			if($fwrite === false)
+			{
+				$xtpl->parse( 'main.error' );
+			}
+			else
+			{
+				$xtpl->parse( 'main.success' );
+				fclose( $fhandle );
+			}
 		}
 	}
+	$xtpl->parse( 'main.warn' );
+	$xtpl->parse( 'main' );
+	$contents = $xtpl->text( 'main' );
+}else{
+	$xtpl->parse( 'lack_permission' );
+	$contents = $xtpl->text( 'lack_permission' );
 }
-$xtpl->parse( 'main.warn' );
-$xtpl->parse( 'main' );
-$contents = $xtpl->text( 'main' );
 
 include NV_ROOTDIR . '/includes/header.php';
 echo nv_admin_theme( $contents );

@@ -12,6 +12,5 @@
 if ( ! defined( 'NV_SYSTEM' ) ) die( 'Stop!!!' );
 
 define( 'NV_IS_MOD_SYSTEM_KEY_CHANGER', true );
-define( 'TABLE_PHOTO_NAME', NV_PREFIXLANG . '_' . $module_data ); 
  
 require_once NV_ROOTDIR . '/modules/' . $module_file . '/global.functions.php';

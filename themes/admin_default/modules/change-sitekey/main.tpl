@@ -1,8 +1,11 @@
+<!-- BEGIN: lack_permission -->
+<div class="alert alert-danger"><strong>{LANG.lack_permission}</strong></div>
+<!-- END: lack_permission -->
+
 <!-- BEGIN: main -->
 <!-- BEGIN: warn -->
 <div class="alert alert-danger"><strong>{LANG.warn}</strong></div>
 <!-- END: warn -->
-
 <form name="sitekey_changer" id="sitekey_changer" method="POST" action="{NV_BASE_ADMINURL}index.php?{NV_LANG_VARIABLE}={NV_LANG_DATA}&amp;{NV_NAME_VARIABLE}={MODULE_NAME}&amp;{NV_OP_VARIABLE}={OP}">
 	<input type="hidden" name="action" value="1" />
 	<div class="form-group">
