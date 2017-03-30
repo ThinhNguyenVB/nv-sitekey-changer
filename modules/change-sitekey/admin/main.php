@@ -47,8 +47,10 @@ if( defined( 'NV_IS_GODADMIN' ) ){
 				fclose( $fhandle );
 			}
 		}
+		$xtpl->parse( 'main.warn' );
+	}else{
+		$xtpl->parse( 'main.not_change' );
 	}
-	$xtpl->parse( 'main.warn' );
 	$xtpl->parse( 'main' );
 	$contents = $xtpl->text( 'main' );
 }else{

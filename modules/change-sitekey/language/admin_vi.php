@@ -15,6 +15,7 @@ if ( ! defined( 'NV_MAINFILE' ) ) die( 'Stop!!!' );
 $lang_module['main'] = 'Tạo lại sitekey';
 $lang_module['lack_permission'] = 'Bạn không đủ quyền để thực thi hành động này.';
 $lang_module['warn'] = 'Hãy nghĩ kỹ trước khi nhấn nút.<br/> Bạn sẽ phải tự chịu mọi rủi ro nếu có khi tiến hành.';
+$lang_module['info'] = 'Chưa thể thay sitekey ở thời điểm hiện tại. Vui lòng tắt hoàn toàn trình duyệt và thử lại.';
 $lang_module['save']='Lưu lại';
 $lang_module['delete']='Xóa';
 $lang_module['current_sitekey']='Sitekey hiện tại';
